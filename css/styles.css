@@ -1,0 +1,50 @@
+nav{
+    height: 100%;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+}
+
+nav li {
+    float: left;
+    display: block;
+    width: 100%;
+}
+
+nav li > a {
+    display: block;
+    color: gray;
+    text-align: left;
+    padding: 16px 32px;
+    text-decoration: none;
+}
+nav li > a:hover{
+background-color: lightblue;
+}
+#nav-header{
+    background-color: lightgray;
+    height: 250px;
+    display: flex;
+}
+#nav-header h2{
+    color: white;
+    float: right;
+    flex: 2;
+    margin: auto;
+    margin-left: 16px
+}
+#nav-header div{
+    float: right;
+    flex: 1;
+    margin: auto;
+}
+#nav-header > img{
+    margin: auto;
+}
+html, body{
+    height: 100%;
+}
