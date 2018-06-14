@@ -1,13 +1,75 @@
-nav{
-    height: 100%;
+header {
+    width: 100%;
+    position: relative;
+    z-index: 0;
+    background-color: rgb(224, 224, 224);
+  }
+
+header .activator-menu {
+  font-size: 30px;
+  cursor: pointer;
+  margin: 0 30px;
 }
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: white;
+
+header .title {
+  font-size: 30px;
+  cursor: pointer;
 }
+
+  header .search-box {
+    float: right;  
+    clear: right;
+    margin: 10px 100px 0 0;
+  }
+
+  header .search-box input[type=text] {
+    padding: 10px 5px;
+    border-radius: 0px 8px 8px 2px;
+    border: 1px solid #333;
+    border-left: none;
+    margin-left: 0;
+    color: #333;
+    width: 100px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+  
+  header .search-box input[type=text]:focus {
+    border-radius: 8px 0 0 8px;
+    border-color: #cc6600;
+    width: 300px;
+  }
+  
+  header .search-box button[type=button] + input[type=text] {
+    color: rgb(255, 255, 255);
+    padding: 2px 8px;
+    margin-left: -5px;
+    border-radius: 0 8px 8px 0;
+    border: 1px solid #333;
+    border-left: none;
+  }
+  
+  header .search-box button[type=button] + input[type=text]:focus {
+    border-color: #cc6600;
+  }
+
+  header .fa-stack  {
+    float: right;  
+    clear: right;
+    margin: -30px 20px 50px 50px;
+  }
+  
+  nav {
+    float: left;
+    width: 20%;
+}
+  nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: white;
+  }
 
 nav li {
     float: left;
@@ -47,4 +109,40 @@ background-color: lightblue;
 }
 html, body{
     height: 100%;
+}
+
+  .page-content {
+    float: left;
+    width: 80%;
+}
+
+  .page-content .breadcrumb {
+    max-width: 200px;
+    
+  }
+
+  .page-content ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: rgb(245, 245, 245);
+}
+
+.page-content ul.breadcrumb li {
+    display: inline;
+    font-size: 20px;
+}
+
+.page-content ul.breadcrumb li+li:before {
+    padding: 5px;
+    color: gray;
+    content: "/\00a0";
+}
+
+.page-content ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+.page-content ul.breadcrumb li a:hover {
+    color: #0275d8;
+    text-decoration: underline;
 }
