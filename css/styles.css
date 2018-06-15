@@ -66,6 +66,7 @@ header .title {
   
   nav {
     width: 350px;
+    border-right: 1px solid #333;
 }
   nav ul {
       list-style-type: none;
