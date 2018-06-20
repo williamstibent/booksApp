@@ -2,6 +2,19 @@
     --main-color: rgb(245, 245, 245);
     --accent-color: rgb(224, 224, 224);
   }
+
+  #all-content {
+    display: none;
+  }
+
+  #loader {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
 header {
     width: 100%;
     position: relative;
@@ -171,4 +184,52 @@ html, body{
 }
 .books-info img{
     margin: 16px 32px;
+}
+
+.books-content .book {
+    border: 1px solid #333;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.books-content .book .title-book {
+    background-color: var(--main-color);
+    border-bottom: 1px solid #333;
+    background-color: var(--accent-color);
+    font-size: 30px;
+    color: white;
+}
+
+
+.books-content .book .img-book {
+    text-align: center;
+}
+
+.books-content .book .img-book > img {
+    width: 200px;
+    height: 200px;
+}
+
+.books-content .book .title-book {
+    text-align: justify;
+    text-justify: inter-word;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 10px 10px;
+}
+
+.books-content .book .content-book {
+    text-align: justify;
+    text-justify: inter-word;
+    padding: 10px 10px;
+}
+
+.books-content .book .footer-book {
+    text-align: right;
+    padding: 10px 10px;
+}
+
+.books-content .book .footer-book > button {
+    border-radius: 5px;
+    background-color: #44a0ec;
+    color: white;
 }

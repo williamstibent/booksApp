@@ -1,6 +1,12 @@
 $(document).ready(function () {
+    $('#loader').fadeOut(1500, function () {
+        $(this).hide(0, function () {
+            $('#all-content').show()      
+        })
+    })
+
     $('#activator-menu').click(function () {
-        $('#container-nav-header').toggle(1000)
+        $('#container-nav-header').animate({width: 'toggle'});
     })
 
     //
@@ -27,7 +33,7 @@ $(document).ready(function () {
         ];
 
   books.forEach(element => {
-    let item = $( '#books-info' ).clone().appendTo( '.page-content' );
+    let item = $( '#books-content' ).clone().appendTo( '.page-content' );
     let currentHtml = item.html();
     let newHtml = "";
     Object.keys(element).forEach(k => {
@@ -36,5 +42,5 @@ $(document).ready(function () {
     });    
     item.html(newHtml)
   });
-  $( '#books-info' ).remove();
+  $( '#books-content' ).remove();
 })

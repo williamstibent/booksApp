@@ -15,74 +15,90 @@
 </head>
 
 <body>
-  <header>
-    <span class="activator-menu" id="activator-menu">☰</span>
-    <span class="title">Title</span>
-    <div class="search-box">
-      <button type="button" id="btnSearch">
-        <i class="fa fa-search"></i>
-      </button>
-      <input type="text" name="searchText" />
-    </div>
-    <span class="fa-stack fa-lg">
-      <i class="fa fa-circle-thin fa-stack-2x"></i>
-      <i class="fa fa-user fa-stack-1x"></i>
-    </span>
-  </header>
-  <div id="content">
-    <nav id="container-nav-header">
-      <div id="nav-header">
-        <div>
-          <img src="https://www.shareicon.net/download/2015/09/14/100950_user_512x512.png" height="64px" width="64px">
-        </div>
-        <h2>Nombre de Usuario</h2>
-
+  <div id="loader">
+    <img src="https://loading.io/spinners/typing/lg.-text-entering-comment-loader.gif">
+  </div>
+  <div id="all-content">
+    <header>
+      <span class="activator-menu" id="activator-menu">☰</span>
+      <span class="title">Title</span>
+      <div class="search-box">
+        <button type="button" id="btnSearch">
+          <i class="fa fa-search"></i>
+        </button>
+        <input type="text" name="searchText" />
       </div>
-      <ul>
-        <li>
-          <a href="#home">
-            <i class="fas fa-tachometer-alt"></i>
-            Inicio
-          </a>
-        </li>
-        <li>
-          <a href="#collection">
-            <i class="fas fa-book"></i>
-            Colección
-          </a>
-        </li>
-        <li>
-          <a href="#favorites">
-            <i class="fas fa-star"></i>
-            Favoritos
-          </a>
-        </li>
-        <li>
-          <a href="#salir">
-            <i class="fas fa-power-off"></i>
-            Salir
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <section class="page-content">
-      <ul class="breadcrumb">
-        <li>
-          <a href="#">Home</a>
-        </li>
-        <li>
-          <a href="#">Library</a>
-        </li>
-        <li>Data</li>
-      </ul>
-      <section id="books-info" class="books-info">
-          <div class="book-card">
-            <h2>{{name}}</h2>
-            <img src="{{image}}">
-            <p>{{description}}</p>
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle-thin fa-stack-2x"></i>
+        <i class="fa fa-user fa-stack-1x"></i>
+      </span>
+    </header>      
+    <div id="content">
+      <nav id="container-nav-header">
+        <div id="nav-header">
+          <div>
+            <img src="https://www.shareicon.net/download/2015/09/14/100950_user_512x512.png" height="64px" width="64px">
           </div>
-        </section>
-    </section>
+          <h2>Nombre de Usuario</h2>
+
+        </div>
+        <ul>
+          <li>
+            <a href="#home">
+              <i class="fas fa-tachometer-alt"></i>
+              Inicio
+            </a>
+          </li>
+          <li>
+            <a href="#collection">
+              <i class="fas fa-book"></i>
+              Colección
+            </a>
+          </li>
+          <li>
+            <a href="#favorites">
+              <i class="fas fa-star"></i>
+              Favoritos
+            </a>
+          </li>
+          <li>
+            <a href="#salir">
+              <i class="fas fa-power-off"></i>
+              Salir
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <section class="page-content">
+        <ul class="breadcrumb">
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">Library</a>
+          </li>
+          <li>Data</li>
+        </ul>
+        <div id="books-content" class="books-content">
+          <div class="book">
+            <div class="title-book">
+              <span>{{name}}</span>
+            </div>
+            <div class="img-book">
+              <img src="{{image}}">
+            </div>
+            <div class="content-book">
+              <p>
+                  {{description}}
+              </p>
+            </div>
+            <div class="footer-book">
+              <button type="submit">Ver Detalle</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
 </body>
 
