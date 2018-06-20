@@ -176,6 +176,16 @@ html, body{
 #content section{
     flex: 1;
 }
+.books-info{
+    border: 1px solid var(--accent-color);
+    border-radius: 5px
+}
+.books-info h2{
+    background-color: var(--main-color);
+}
+.books-info img{
+    margin: 16px 32px;
+}
 
 .books-content {
     display: grid;

@@ -1,0 +1,23 @@
+{
+    "books":[
+        {
+            "name": "Book 1",
+            "image": "https://images-na.ssl-images-amazon.com/images/I/51HSkTKlauL._SX346_BO1,204,203,200_.jpg",
+            "Description" :"Harry Potter es una serie de novelas fantásticas escrita por la autora británica J. K. Rowling, considerada una de las sagas más importantes de la historia. Realmente la más leída según el Libro de los récords Guiness."
+
+        },
+        {
+            "name": "Book 2",
+            "image": "https://hpmedia.bloomsbury.com/rep/s/9781408855669_309028.jpeg",
+            "Description" :"Harry Potter es una serie de novelas fantásticas escrita por la autora británica J. K. Rowling, considerada una de las sagas más importantes de la historia. Realmente la más leída según el Libro de los récords Guiness."
+
+        },
+        {
+            "name": "Book 3",
+            "image": "https://hpmedia.bloomsbury.com/rep/s/9781408855683_309032.jpeg",
+            "Description" :"Harry Potter es una serie de novelas fantásticas escrita por la autora británica J. K. Rowling, considerada una de las sagas más importantes de la historia. Realmente la más leída según el Libro de los récords Guiness."
+
+        }
+
+    ]
+}
