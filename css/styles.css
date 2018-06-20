@@ -107,8 +107,9 @@ background-color: lightblue;
 }
 #nav-header{
     background-color: var(--accent-color);
-    height: 250px;
+    height: 100px;
     display: flex;
+    padding-left: 10px;
 }
 #nav-header h2{
     color: white;
@@ -176,10 +177,16 @@ html, body{
     flex: 1;
 }
 
+.books-content {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+}
+
 .books-content .book {
     border: 1px solid #333;
     border-radius: 5px;
-    width: 300px;
+    width: 250px;
 }
 
 .books-content .book .title-book {
