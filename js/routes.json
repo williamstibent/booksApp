@@ -1,0 +1,10 @@
+[
+    {
+        "path":"/",
+        "component":"list.html"
+    },
+    {
+        "path":"/detail.html",
+        "component":"detail.html"
+    }
+]
