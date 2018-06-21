@@ -71,9 +71,7 @@ $(document).ready(function () {
                 $('#books-content').html(response)
                 if (path.indexOf('list.html') > 0) {
                     $.getJSON('./data/data.json').done(function (resp) {
-                        debugger
                         resp.books.forEach(element => {
-                            debugger
                             let item = $('#book').clone().appendTo('.books-content');
                             let currentHtml = item.html();
                             let newHtml = "";
