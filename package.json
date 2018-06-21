@@ -1,0 +1,23 @@
+{
+  "name": "booksapp",
+  "version": "1.0.0",
+  "description": "App Google Books",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/williamstibent/booksApp.git"
+  },
+  "author": "William Stibent",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/williamstibent/booksApp/issues"
+  },
+  "homepage": "https://github.com/williamstibent/booksApp#readme",
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  }
+}
