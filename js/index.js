@@ -5,38 +5,21 @@ $(document).ready(function () {
         })
     })
 
-    $.ajax({
-        url: './components/list.html',
-        type: 'GET',
-        dataType: 'text',
-        success: function (response) {
-            $('#books-content').html(response)
-            $.ajax({
-                url: './data/data.json',
-                type: 'GET',
-                dataType: 'json',
-                success: function (books) {
-                    debugger
-                    Array.from(books).forEach(element => {
-                        let item = $('#book').clone().appendTo('.books-content');
-                        let currentHtml = item.html();
-                        let newHtml = "";
-                        Object.keys(element).forEach(k => {
-                            newHtml = currentHtml.replace("{{" + k + "}}", element[k]);
-                            currentHtml = newHtml;
-                        });
-                        item.html(newHtml)
-                    });
-                    $('#book').remove();
+    router($(window)[0].location)
+
+    $(window).on('hashchange', function (e) {
+        let event = e.originalEvent
+        let hash = event.newURL.split('#')[1];
+
+        $.getJSON('./js/routes.json').done(function (response) {
+            response.map(function (data) {
+                if (location.hash == "" && data.path == "/") {
+                    getContent("./components/" + data.component);
+                } else if (hash == data.path) {
+                    getContent("./components/" + data.component);
                 }
-            })
-        },
-        error: function () {
-            console.log(error)
-        },
-        complete: function (xhr, status) {
-            console.log(status)
-        }
+            });
+        });
     })
 
     $('#activator-menu').one('click', reduceSizeNav)
@@ -64,5 +47,46 @@ $(document).ready(function () {
         $('#container-nav-header').animate({
             width: widthNav
         }, 500)
+    }
+
+    function router(location) {
+        let hash = location.hash.split('#')[1]
+
+        $.getJSON('./js/routes.json').done(function (response) {
+            response.map(function (data) {
+                if (location.hash == "" && data.path == "/")
+                    getContent("./components/" + data.component)
+                else if (hash == data.path)
+                    getContent("./components/" + data.component)
+            })
+        })
+    }
+
+    function getContent(path) {
+        debugger
+        $.ajax({
+            url: path,
+            type: 'GET',
+            dataType: 'text',
+            success: function (response) {
+                debugger
+                $('#books-content').html(response)
+                /*if (response.indexOf('list.html') > 0) {
+                    $.getJSON('./data/data.json').done(function (books) {
+                        Array.from(books).forEach(element => {
+                            let item = $('#book').clone().appendTo('.books-content');
+                            let currentHtml = item.html();
+                            let newHtml = "";
+                            Object.keys(element).forEach(k => {
+                                newHtml = currentHtml.replace("{{" + k + "}}", element[k]);
+                                currentHtml = newHtml;
+                            });
+                            item.html(newHtml)
+                        });
+                        $('#book').remove();
+                    })
+                }*/
+            }
+        })
     }
 })

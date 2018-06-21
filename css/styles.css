@@ -235,7 +235,7 @@ html, body{
     padding: 10px 10px;
 }
 
-.books-content .book .footer-book > button {
+.books-content .book .footer-book .submit-detail-book {
     border-radius: 5px;
     background-color: #44a0ec;
     color: white;
