@@ -63,17 +63,17 @@ $(document).ready(function () {
     }
 
     function getContent(path) {
-        debugger
         $.ajax({
             url: path,
             type: 'GET',
             dataType: 'text',
             success: function (response) {
-                debugger
                 $('#books-content').html(response)
-                /*if (response.indexOf('list.html') > 0) {
-                    $.getJSON('./data/data.json').done(function (books) {
-                        Array.from(books).forEach(element => {
+                if (path.indexOf('list.html') > 0) {
+                    $.getJSON('./data/data.json').done(function (resp) {
+                        debugger
+                        resp.books.forEach(element => {
+                            debugger
                             let item = $('#book').clone().appendTo('.books-content');
                             let currentHtml = item.html();
                             let newHtml = "";
@@ -85,7 +85,7 @@ $(document).ready(function () {
                         });
                         $('#book').remove();
                     })
-                }*/
+                }
             }
         })
     }
