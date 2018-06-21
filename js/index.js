@@ -5,11 +5,33 @@ $(document).ready(function () {
         })
     })
 
-    $('#activator-menu').click(function () {
-        $('#container-nav-header').animate({ width: 'toggle' });
-    })
+    $('#activator-menu').one('click', reduceSizeNav)
 
-    //
+    function reduceSizeNav() {
+        changeSizeNav(true)
+        $(this).one('click', maximazeSizeNav)
+    }
+
+    function maximazeSizeNav() {
+        changeSizeNav(false)
+        $(this).one('click', reduceSizeNav)
+    }
+
+    function changeSizeNav(reduce) {
+        var widthNav
+        if(reduce){
+            $('#username-navbar').hide()
+            widthNav = '150px'
+        }
+        else{
+            $('#username-navbar').show()
+            widthNav = '350px'
+        }
+        $('#container-nav-header').animate({
+            width: widthNav
+        }, 500)
+    }
+
     var books = [
         {
             "name": "Book 1",
