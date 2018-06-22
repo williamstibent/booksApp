@@ -135,7 +135,8 @@ html, body{
   .page-content {
     float: left;
     flex: 1;
-    padding: 16px
+    padding: 20px;
+    margin-right: -9%;
 }
 
   .page-content .breadcrumb {
@@ -190,7 +191,8 @@ html, body{
 .books-content {
     display: grid;
     grid-template-columns: auto auto auto;
-    padding: 10px;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
 }
 
 .books-content .book {
@@ -210,6 +212,7 @@ html, body{
 
 .books-content .book .img-book {
     text-align: center;
+    padding-top: 5px;
 }
 
 .books-content .book .img-book > img {
@@ -239,4 +242,10 @@ html, body{
     border-radius: 5px;
     background-color: #44a0ec;
     color: white;
+    border: none;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
 }
