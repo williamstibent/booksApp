@@ -93,6 +93,7 @@ nav li {
     float: left;
     display: block;
     width: 100%;
+    border-bottom: 1px solid #ccc;
 }
 
 nav li > a {
@@ -135,7 +136,8 @@ html, body{
   .page-content {
     float: left;
     flex: 1;
-    padding: 16px
+    padding: 20px;
+    margin-right: -112px;
 }
 
   .page-content .breadcrumb {
@@ -189,15 +191,16 @@ html, body{
 }
 
 .books-content {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    padding: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
 }
 
 .books-content .book {
     border: 1px solid #333;
     border-radius: 5px;
     width: 250px;
+    margin: 20px;
 }
 
 .books-content .book .title-book {
@@ -211,6 +214,7 @@ html, body{
 
 .books-content .book .img-book {
     text-align: center;
+    padding-top: 5px;
 }
 
 .books-content .book .img-book > img {
@@ -240,6 +244,12 @@ html, body{
     border-radius: 5px;
     background-color: #44a0ec;
     color: white;
+    border: none;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
 }
 .item-title{
     font-size: 5em;

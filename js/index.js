@@ -10,17 +10,53 @@ $(document).ready(function () {
     $(window).on('hashchange', function (e) {
         let event = e.originalEvent
         let hash = event.newURL.split('#')[1];
+        preProcessContent(hash, location)
+    })
 
+    function router(location) {
+        let hash = location.hash.split('#')[1]
+        preProcessContent(hash, location)
+    }
+
+    function preProcessContent(currentHash, currentLocation) {
         $.getJSON('./js/routes.json').done(function (response) {
             response.map(function (data) {
-                if (location.hash == "" && data.path == "/") {
-                    getContent("./components/" + data.component);
-                } else if (hash == data.path) {
-                    getContent("./components/" + data.component);
-                }
+                if (currentLocation.hash == '' && data.path == '/')
+                    getContent('./components/' + data.component)
+                else if (currentHash == data.path)
+                    getContent('./components/' + data.component)
+            })
+        })
+    }
+
+    function getContent(path) {
+        $.ajax({
+            url: path,
+            type: 'GET',
+            dataType: 'text',
+            success: function (response) {
+                $('#books-content').html(response)
+                if (path.indexOf('list.html') > 0)
+                    loadBooks()
+            }
+        })
+    }
+
+    function loadBooks() {
+        $.getJSON('./data/data.json').done(function (resp) {
+            resp.books.forEach(element => {
+                let item = $('#book').clone().appendTo('.books-content')
+                let currentHtml = item.html()
+                let newHtml = ''
+                Object.keys(element).forEach(k => {
+                    newHtml = currentHtml.replace("{{" + k + "}}", element[k])
+                    currentHtml = newHtml
+                })
+                item.html(newHtml)
             });
-        });
-    })
+            $('#book').remove()
+        })
+    }
 
     $('#activator-menu').one('click', reduceSizeNav)
 
@@ -49,49 +85,4 @@ $(document).ready(function () {
         }, 500)
     }
 
-    function router(location) {
-        let hash = location.hash.split('#')[1]
-
-        $.getJSON('./js/routes.json').done(function (response) {
-            response.map(function (data) {
-                if (location.hash == "" && data.path == "/")
-                    getContent("./components/" + data.component)
-                else if (hash == data.path)
-                    getContent("./components/" + data.component)
-            })
-        })
-    }
-
-    function getContent(path) {
-        $.ajax({
-            url: path,
-            type: 'GET',
-            dataType: 'text',
-            success: function (response) {
-                $('#books-content').html(response)
-                if (path.indexOf('list.html') > 0) {
-                    $.getJSON('./data/data.json').done(function (books) {
-                        
-                        books.books.forEach(element => {
-                            let item = $('#book').clone().appendTo('.books-content');
-                            let currentHtml = item.html();
-                            let newHtml = "";
-                            Object.keys(element).forEach(k => {
-                                newHtml = currentHtml.replace("{{" + k + "}}", element[k]);
-                                currentHtml = newHtml;
-                            });
-                            item.html(newHtml)
-                            item.click(function(){
-                                console.log(element);
-                            })
-                        });
-                        $('#book').remove();
-                    })
-                }
-                if (path.indexOf('detail.html')) {
-                    
-                }
-            }
-        })
-    }
 })
