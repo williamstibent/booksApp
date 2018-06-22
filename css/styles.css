@@ -93,6 +93,7 @@ nav li {
     float: left;
     display: block;
     width: 100%;
+    border-bottom: 1px solid #ccc;
 }
 
 nav li > a {
@@ -136,7 +137,7 @@ html, body{
     float: left;
     flex: 1;
     padding: 20px;
-    margin-right: -9%;
+    margin-right: -112px;
 }
 
   .page-content .breadcrumb {
@@ -189,16 +190,16 @@ html, body{
 }
 
 .books-content {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
 }
 
 .books-content .book {
     border: 1px solid #333;
     border-radius: 5px;
     width: 250px;
+    margin: 20px;
 }
 
 .books-content .book .title-book {
