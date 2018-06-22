@@ -172,6 +172,7 @@ html, body{
 #content{
     flex: 1;
     display: flex;
+    width: 100%;
 }
 #content section{
     flex: 1;
@@ -239,4 +240,22 @@ html, body{
     border-radius: 5px;
     background-color: #44a0ec;
     color: white;
+}
+.item-title{
+    font-size: 5em;
+}
+.item-body{
+    display: flex;
+    flex-direction: row;
+    padding-top: 16px;
+    align-items:stretch;
+}
+.item-img > img{
+    width: 100%;
+    height: auto;
+    flex: 1 100%;
+
+}
+.item-description{
+    flex: 1 100%;
 }

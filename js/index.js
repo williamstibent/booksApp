@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $('#loader').fadeOut(1500, function () {
         $(this).hide(0, function () {
-            $('#all-content').show()
+            $('#all-content').show().css( "display", "contents" );
         })
     })
 
@@ -63,17 +63,16 @@ $(document).ready(function () {
     }
 
     function getContent(path) {
-        debugger
         $.ajax({
             url: path,
             type: 'GET',
             dataType: 'text',
             success: function (response) {
-                debugger
                 $('#books-content').html(response)
-                /*if (response.indexOf('list.html') > 0) {
+                if (path.indexOf('list.html') > 0) {
                     $.getJSON('./data/data.json').done(function (books) {
-                        Array.from(books).forEach(element => {
+                        
+                        books.books.forEach(element => {
                             let item = $('#book').clone().appendTo('.books-content');
                             let currentHtml = item.html();
                             let newHtml = "";
@@ -82,10 +81,16 @@ $(document).ready(function () {
                                 currentHtml = newHtml;
                             });
                             item.html(newHtml)
+                            item.click(function(){
+                                console.log(element);
+                            })
                         });
                         $('#book').remove();
                     })
-                }*/
+                }
+                if (path.indexOf('detail.html')) {
+                    
+                }
             }
         })
     }
