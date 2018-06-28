@@ -91,13 +91,16 @@ $(document).ready(function () {
 
     function changeSizeNav(reduce) {
         var widthNav
+        var spanChildrenNav = $('#container-nav-header').children('ul').children('li').children('a').children('span')
         if (reduce) {
             $('#username-navbar').hide()
-            widthNav = '150px'
+            widthNav = '100px'
+            spanChildrenNav.hide()
         }
         else {
             $('#username-navbar').show()
             widthNav = '350px'
+            spanChildrenNav.show()
         }
         $('#container-nav-header').animate({
             width: widthNav
