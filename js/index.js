@@ -91,7 +91,7 @@ $(document).ready(function () {
 
     function changeSizeNav(reduce) {
         var widthNav
-        var spanChildrenNav = $('#container-nav-header').children('ul').children('li').children('a').children('span')
+        var spanChildrenNav = $('nav span');
         if (reduce) {
             $('#username-navbar').hide()
             widthNav = '100px'
