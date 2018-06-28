@@ -21,9 +21,10 @@ $(document).ready(function () {
     function preProcessContent(currentHash, currentLocation) {
         $.getJSON('./js/routes.json').done(function (response) {
             response.map(function (data) {
+                debugger
                 if (currentLocation.hash == '' && data.path == '/')
                     getContent('./components/' + data.component)
-                else if (currentHash == data.path)
+                else if (currentHash && currentHash.indexOf(data.path) > -1 && data.path != '/')
                     getContent('./components/' + data.component)
             })
         })
@@ -38,7 +39,25 @@ $(document).ready(function () {
                 $('#books-content').html(response)
                 if (path.indexOf('list.html') > 0)
                     loadBooks()
+                else
+                    loadBook()
             }
+        })
+    }
+
+    function loadBook() {
+        let bookId = location.hash.split('/')[2]
+        let currentHtml = $('#detail-book').html()
+        
+        $.getJSON('./data/data.json').done(function (resp) {
+            resp.books.forEach(element => {
+                if(element.id == bookId){
+                    Object.keys(element).forEach(k => {
+                        currentHtml = currentHtml.replace('{{'+k+'}}', element[k])
+                    })
+                    $('#detail-book').html(currentHtml)
+                }
+            })
         })
     }
 

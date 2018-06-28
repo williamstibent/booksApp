@@ -4,7 +4,7 @@
         "component":"list.html"
     },
     {
-        "path":"/detail.html",
+        "path":"/detail/",
         "component":"detail.html"
     }
 ]

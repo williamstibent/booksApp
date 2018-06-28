@@ -137,7 +137,7 @@ html, body{
     float: left;
     flex: 1;
     padding: 20px;
-    margin-right: -112px;
+    overflow-y: scroll;
 }
 
   .page-content .breadcrumb {
@@ -262,7 +262,7 @@ html, body{
 }
 .item-img > img{
     width: 100%;
-    height: auto;
+    height: 100%;
     flex: 1 100%;
 
 }
