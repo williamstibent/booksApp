@@ -1,3 +1,4 @@
+import '../css/styles.css';
 $(document).ready(function () {
     $('#loader').fadeOut(1500, function () {
         $(this).hide(0, function () {
